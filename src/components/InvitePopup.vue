@@ -51,9 +51,7 @@
     </div>
   </template>
   
-  <script setup>
-  import { defineEmits } from 'vue'
-  
+  <script setup>  
   const props = defineProps({
     isOpen: {
       type: Boolean,
