@@ -1,5 +1,8 @@
-// prod url = https://slow-tuna-53.deno.dev
-export const API_BASE_URL = new URL('http://localhost:8082');
+import { ENV } from "./environment.ts";
+
+const api_prod_url = 'https://slow-tuna-53.deno.dev';
+const api_dev_url = 'http://localhost:8082';
+export const API_BASE_URL = new URL(ENV.mode === 'production' ? api_prod_url : api_dev_url);
 
 export function endpoint(endpoint : string, paramaters : { key : string, value : string}[] | undefined |null, protocol = 'http') : URL {
     const endPointUrl = new URL(API_BASE_URL.toString() + endpoint);

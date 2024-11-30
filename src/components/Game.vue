@@ -14,7 +14,7 @@ import { onMounted, reactive, ref } from 'vue';
 
 import { receiveEvent, sendEvent } from '../types/GameChannel';
 import { User } from '../types/Generic';
-import { endpoint } from '../api';
+import { endpoint } from '../helpers/api';
 
 import Spinner from './Spinner.vue';
 import GameChoice from './partials/GameChoice.vue';

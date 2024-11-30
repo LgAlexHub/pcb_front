@@ -25,7 +25,7 @@ import { useRouter } from 'vue-router';
 
 import { User, UserMessage } from '../types/Generic';
 import { receiveEvent, sendEvent } from '../types/WebChannel';
-import { endpoint } from '../api';
+import { endpoint } from '../helpers/api';
 
 import ChatboxInput from './partials/ChatboxInput.vue';
 import UserInput from './partials/UserInput.vue';
