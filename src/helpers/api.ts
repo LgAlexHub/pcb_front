@@ -14,7 +14,7 @@ export function endpoint(endpoint : string, paramaters : { key : string, value :
             );
         }
     }
-    endPointUrl.protocol = protocol;
+    endPointUrl.protocol.replace(endPointUrl.protocol, protocol);
     return endPointUrl; 
 }
 
