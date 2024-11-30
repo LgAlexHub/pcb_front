@@ -1,14 +1,16 @@
 <template>
-    <div class="relative mx-10 my-10 p-10 flex flex-col space-y-5">
-        <div class="lds-roller h-40">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+    <div class="h-full">
+        <div class="relative mx-10 my-10 p-10 flexflex-col space-y-5">
+            <div class="lds-roller h-40">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
         <p class="text-center" v-if="props.waitMessage">
             {{ props.waitMessage }}
@@ -17,9 +19,9 @@
 </template>
 
 <script setup lang="ts">
-    const props = defineProps({
-        waitMessage : String
-    });
+const props = defineProps({
+    waitMessage: String
+});
 </script>
 
 <style>

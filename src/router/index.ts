@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Chatbox from "../components/Chatbox.vue";
+import Lobby from "../components/Lobby.vue";
 import Game from "../components/Game.vue";
 
 export default createRouter({
@@ -9,7 +9,7 @@ export default createRouter({
     {
       path: "/",
       name: "Home",
-      component: Chatbox,
+      component: Lobby,
     },
     {
       path: "/game/:game",
