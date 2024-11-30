@@ -34,19 +34,15 @@ const props = defineProps({
         required: true,
         type: Number
     },
-    endCallback: {
-        required: true,
-        type: Function
-    }
 });
+
+const emits = defineEmits(['endCountdown']);
 
 const currentCount = ref(0);
 const elapsedSeconds = ref(0);
 
-// Calculer la circonstance du cercle
 const circumference = 2 * Math.PI * 45;
 
-// Calculer le offset du cercle en fonction des secondes écoulées
 const progressOffset = computed(() => {
     const progress = elapsedSeconds.value / props.countInSeconds;
     return circumference * (1 - progress);
@@ -62,12 +58,10 @@ function countdown() {
     }
 }
 
-// Utiliser un watcher pour gérer précisément la fin du compte à rebours
 watch(currentCount, (newValue) => {
     if (newValue === 0) {
-        // Attendre la dernière transition du cercle avant d'appeler le callback
         setTimeout(() => {
-            props.endCallback();
+            emits('endCountdown');
         }, 1000);
     }
 });

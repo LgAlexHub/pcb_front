@@ -3,7 +3,7 @@
         <h1 class="text-center text-xl">Welcome Pour con bien !</h1>
         <GameChoice class="h-full" v-on:button-clicked="onChoice" v-if="playState === state.choosing" />
         <Spinner :wait-message="waitMessage ?? 'en attente'" v-if="playState === state.waiting" />
-        <Countdown :count-in-seconds="3" :end-callback="() => {playState = state.revealing}" v-if="playState === state.counting" />
+        <Countdown :count-in-seconds="3" v-on:end-countdown="() => {playState = state.revealing}" v-if="playState === state.counting" />
         <GameReveal class="h-full" :current-user="user" :reveals="reveals" v-on:continue="retry" v-on:leave="quit" v-if="playState === state.revealing" />
         <h4 class="text-center text-slate-500">{{ props.game ?? 'Aucun id' }}</h4>
     </div>
