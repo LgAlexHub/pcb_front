@@ -1,6 +1,6 @@
 import { ENV } from "./environment.ts";
 
-const api_prod_url = 'https://slow-tuna-53.deno.dev';
+const api_prod_url = 'https://slow-tuna-53-3e33y84qbs12.deno.dev';
 const api_dev_url = 'http://localhost:8082';
 export const API_BASE_URL = new URL(ENV.mode === 'production' ? api_prod_url : api_dev_url);
 
